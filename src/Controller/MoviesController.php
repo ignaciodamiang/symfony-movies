@@ -18,9 +18,7 @@ class MoviesController extends AbstractController
     #[Route('/movies', name: 'movies') ]
     public function index(): Response
     {
-        $repository = $this->em->getRepository('App:Movie');
-        $movies = $repository->findAll();
-        dd($movies);
+
         return $this->render('index.html.twig');       
     }
 }
