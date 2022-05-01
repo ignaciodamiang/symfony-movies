@@ -22,17 +22,19 @@ class Movie
     #[Assert\Length(min: 2, max: 255)]
     private $title;
 
+    
     #[ORM\Column(type: 'integer')]
-    #[Assert\NotBlank]
     #[Assert\Range(min: 1900, max: 2100)]
+    #[Assert\NotBlank]
     private $releaseYear;
 
+    
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    #[Assert\NotBlank]
     #[Assert\Length(min: 10, max: 255)]
+    #[Assert\NotBlank]
     private $description;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $imagePath;
 
     #[ORM\ManyToMany(targetEntity: Actor::class, inversedBy: 'movies')]
